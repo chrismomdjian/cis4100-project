@@ -12,15 +12,11 @@ https://retro-games-app.herokuapp.com/
 Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone https://github.com/chrismomdjian/cis4100-project.git
+$ cd cis4100-project
 
-$ python3 -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
-
-$ python manage.py migrate
 $ python manage.py collectstatic
 
 $ heroku local
@@ -34,4 +30,16 @@ $ git push heroku main
 
 $ heroku run python manage.py migrate
 $ heroku open
+```
+
+## Check if Heroku app is running
+
+```sh
+$ heroku ps:scale web=1 
+```
+
+## Check Heroku logs
+
+```sh
+$ heroku logs --tail
 ```
