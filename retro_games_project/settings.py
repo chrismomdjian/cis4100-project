@@ -27,7 +27,8 @@ SECRET_KEY = 'xomblh(3r)x*tk=01)i43l^g(9u=973ukj@7c#b^px7ni0_lya'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'immense-basin-48125.herokuapp.com'
+    'retro-games-app.herokuapp.com',
+    'localhost'
 ]
 
 
