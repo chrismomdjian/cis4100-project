@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div>
+		<table id="myTable" class="display">
+			<thead>
+		        <tr>
+		        	<th>Cover</th>
+		            <th>Title</th>
+		            <th>First release date</th>
+		            <th>Summary</th>
+		            <th>More information</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        {% if all_games|length > 0 %}
+		        	{% for game in all_games %}
+			        	<tr>
+			        		<td><img src="{{ game.cover }}" alt="game cover"/></td>
+			        		<td>{{ game.title }}</td>
+			        		<td>{{ game.release_date }}</td>
+			        		<td>{{ game.summary }}</td>
+			        		<td><button class="btn btn-info btn-sm">info</button></td>
+			        	</tr>
+			        {% endfor %}
+		        {% endif %}
+		    </tbody>
+		</table>
+	</div>
+{% endblock %}

@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<section>
-		<h1>A list of my favorite NES games</h1>
-		<ol>
-			<li>Kung Fu</li>
-			<li>Contra</li>
-			<li>Kabuki Quantum Fighter</li>
-			<li>Batman</li>
-			<li>Power Blade</li>
-			<li>Super Mario Bros</li>
-			<li>Super Mario Bros 3</li>
-		</ol>
-	</section>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<h1>Welcome to the Retro Games Lookup tool!</h1>
+			<p>You can look up some of your favorite games and get some information back about it including storyline, platforms, original release dates, and more.</p>
+		</div>
+
+		<div class="col-xs-12 col-sm-6">
+			<form id="search_title_form" action="{% url 'results' %}" method="POST">
+				{% csrf_token %}
+				<div class="input-group mb-3">
+				  <input type="text" class="form-control" id="search-title" name="search_title" placeholder="Search by title">
+				  <div class="input-group-append">
+				    <button class="btn btn-success" id="generate-btn" type="submit">Search for a game</button>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}
