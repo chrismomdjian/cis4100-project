@@ -1,3 +1,4 @@
 django
 gunicorn
 django-heroku
+igdb-api-v4
